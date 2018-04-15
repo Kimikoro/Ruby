@@ -1,0 +1,28 @@
+
+    <h1>Editing Book</h1>
+
+<%= form_for(@cup) do |f| %>
+
+
+	<div class="field">
+  	<%= f.label :title, "title" %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :body, "body" %>
+    <%= f.text_area :body %>
+  </div>
+
+   <div class="field">
+    <%= f.submit "Update Book" %>
+  </div>
+
+</form>
+
+
+<% end %>
+
+<%= link_to "Show", cup_path(@cup.id) %>
+<%= link_to "Back", cups_main_path %>
+

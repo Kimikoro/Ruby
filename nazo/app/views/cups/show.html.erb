@@ -1,0 +1,17 @@
+<% if flash[:notice] %>
+    <p id="notice"><%= flash[:notice] %></p>
+<% end %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @cup.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @cup.body %>
+</p>
+
+<%= link_to "Edit", edit_cup_path(@cup.id) %> |
+<%= link_to "Back", cups_main_path %>
+
