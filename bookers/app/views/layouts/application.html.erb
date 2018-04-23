@@ -24,7 +24,7 @@
         		<%= link_to " Home", bookers_path, class:"glyphicon glyphicon-home", 'aria-label':"Home" %>
      		</li>
       		<li class="nav-icon">
-        		<%= link_to " User", bookers_path, class:"glyphicon glyphicon-user", 'aria-label':"User" %>
+        		<%= link_to " User", users_path, class:"glyphicon glyphicon-user", 'aria-label':"User" %>
 		    </li>
 		    <li class="nav-icon">
 		        <%= link_to " Book", bookers_path, class:"glyphicon glyphicon-book", 'aria-label':"Book" %>
@@ -56,47 +56,7 @@
   </div>
 </header>
 
-<div class="user-info">
-	<div class="col-xs-3">
-    <h2>User info</h2>
-    <img class="attachment user profile_image fallback" src="/assets/no_image-ede28af4bad96368ef41be1b4be1cffce0d9402540f75d17895e32cb0d2af5e6.jpg" alt="No image"><table class="table">
-      <tbody><tr></tr> 
-      <tr>
-    	  <th>name</th>
-    	  <th>kimi</th>
-      </tr>
-      <tr>
-    	  <th>introduction</th>
-    	  <th></th>
-      </tr>
-    </tbody></table>
-    <div class="row">
-      <a class="col-xs-12 btn btn-default glyphicon glyphicon-wrench" href="/users/376/edit"></a>
-    </div>
 
-    <h2>New book</h2>
-    <form class="new_book" id="new_book" action="/books" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="R8fa37VJsH1YUDSBpGBg3ooBc5OHrJu8ywIppV67sGf6bEtaLWXiIZvAFTsKEX2HvjTkuxwbTFtPe6V9kpujtg==">
-  <div class="field row">
-    <label for="book_title">Title</label>
-    <input class="col-xs-12" type="text" name="book[title]" id="book_title">
-  </div>
-
-  <div class="field row">
-    <label for="book_opinion">Opinion</label>
-    <textarea class="col-xs-12" name="book[body]" id="book_body"></textarea>
-  </div>
-
-  <div class="actions row">
-    <input type="submit" name="commit" value="Create Book" class="btn btn-primary col-xs-12" data-disable-with="Create Book">
-  </div>
-</form>
-
-  </div>
-
-
-
-	
-</div>
 
 
 
