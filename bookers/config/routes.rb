@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :bookers
+  resources :users, only:[:edit, :show]
 
   root 'bookers#top'
 

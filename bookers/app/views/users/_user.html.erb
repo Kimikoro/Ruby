@@ -1,0 +1,17 @@
+    <h2>User info</h2>
+
+    <img class="attachment  profile_image fallback" src="/assets/no_image-ede28af4bad96368ef41be1b4be1cffce0d9402540f75d17895e32cb0d2af5e6.jpg" alt="No image"><table class="table">
+      <tbody><tr></tr> 
+      <tr>
+    	  <th>name</th>
+    	  <th><%= user.name %></th>
+      </tr>
+      <tr>
+    	  <th>introduction</th>
+    	  <th><%= user.introduction %></th>
+      </tr>
+    </tbody></table>
+    <div class="row">
+      <%= link_to "", edit_user, class:"col-xs-12 btn btn-default glyphicon glyphicon-wrench" %>
+    </div>
+

@@ -4,6 +4,7 @@ class BookersController < ApplicationController
   end
   
   def new
+    @booker = Booker.new
   end
 
   def index
