@@ -10,7 +10,6 @@ class BookersController < ApplicationController
   def create
     booker = Booker.new(booker_params)
     booker.user_id = current_user.id
-    
     booker.save
     redirect_to bookers_path
   end
@@ -23,14 +22,30 @@ class BookersController < ApplicationController
   end
 
   def show
+    @booker = Booker.new
+    @post = Booker.find(params[:id])
   end
 
   def edit
+    @booker = Booker.find(params[:id])
+  end
+
+  def update
+    booker = Booker.find(params[:id])
+    booker.user_id = current_user.id
+    booker.save
+    redirect_to bookers_path
+  end
+
+  def destroy
+    booker = Booker.find(params[:id])
+    booker.destroy
+    redirect_to bookers_path
   end
 
   private 
    def booker_params
-    params.require(:booker).permit(:title, :body)
+    params.require(:booker).permit(:title, :body, :user_id)
   end
 
 

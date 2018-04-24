@@ -33,6 +33,6 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :introduction, :profile_image, :user_id )
   	end
   	def booker_params
-    params.require(:booker).permit(:title, :body)
+    params.require(:booker).permit(:title, :body, :user_id)
 	end
 end
