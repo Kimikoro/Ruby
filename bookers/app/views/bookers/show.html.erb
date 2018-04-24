@@ -22,10 +22,10 @@
 		<h2>Book detail</h2>
 		<table class="table"><tbody>
 		<tr>
-        <td><a href="/users/376">
-          <img class="attachment user profile_image" src="/attachments/86d515f5dc57a5caeca86894763d9a2058dc5517/store/fill/100/100/c9e64a75bc8fad1400969832c8952c3940fd6739f708c2cbf08de2c86ae7/profile_image" alt="Profile image"><br>
-          kimi
-</a>        </td>
+			
+        <td>
+        	<%= attachment_image_tag @post.user, :profile_image, format: 'jpeg', class: "img-circle pull-left profile-img profile-image", fallback: "no_image.jpg"%>
+	    </td>
         <td><%= @post.title %></td>
         <td><%= @post.body %></td>
 

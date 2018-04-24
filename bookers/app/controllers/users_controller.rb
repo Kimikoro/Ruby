@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+	before_action :authenticate_user!
+	
 
 	def edit
 		@user = User.find(params[:id])
@@ -35,4 +37,5 @@ class UsersController < ApplicationController
   	def booker_params
     params.require(:booker).permit(:title, :body, :user_id)
 	end
+	
 end

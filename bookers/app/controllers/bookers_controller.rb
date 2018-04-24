@@ -1,8 +1,16 @@
 class BookersController < ApplicationController
 
+before_action :authenticate_user!, except: [:top, :about]
+before_action :correct_user, only: [:edit, :update]
+
   def top
   end
   
+  def about
+  end
+
+
+
   def new
     @booker = Booker.new
   end
@@ -46,7 +54,12 @@ class BookersController < ApplicationController
    def booker_params
     params.require(:booker).permit(:title, :body, :user_id)
   end
-
+  def correct_user
+    user = Booker.find(params[:id])       # URLのidをもとにBookerモデルから1つレコードを取り出す
+    if current_user.id != user.user.id    # 現在のユーザーのidカラムの値が上で取り出したレコードのユーザーのidが違ったらリダイレクト
+      redirect_to booker_path
+    end
+    end
 
 
 end

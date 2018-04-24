@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   resources :bookers
   resources :users
 
-  root 'bookers#top'
+  root 'bookers#index'
+
+  get '/top' => 'bookers#top', as: 'top'
+  get '/about' => 'bookers#about', as: 'about'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
