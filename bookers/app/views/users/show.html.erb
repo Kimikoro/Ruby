@@ -32,7 +32,7 @@
       <tr>
         <td><%= attachment_image_tag @user, :profile_image, format: 'jpeg', class: "img-circle pull-left profile-img profile-image", fallback: "no_image.jpg"%>
        </td>
-        <td><%= f.title %></td>
+        <td><%= link_to f.title, booker_path(f) %></td>
         <td><%= f.body %></td>
       </tr>
     <% end %>
