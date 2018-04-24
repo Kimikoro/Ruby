@@ -1,2 +1,43 @@
-<h1>Bookers#show</h1>
-<p>Find me in app/views/bookers/show.html.erb</p>
+
+
+<div class="container">
+  <div class="row">
+
+  <div class="col-xs-3">
+        
+        
+        <p id="notice"></p>
+      
+  
+      	<%= render 'users/user', user: @post.user %> <!-- @postをしたuser -->
+
+        <%= render 'bookers/booker', booker: @booker %>
+
+
+  </div>
+
+
+
+<div class="col-xs-9">
+		<h2>Book detail</h2>
+		<table class="table"><tbody>
+		<tr>
+			
+        <td>
+        	<%= attachment_image_tag @post.user, :profile_image, format: 'jpeg', class: "img-circle pull-left profile-img profile-image", fallback: "no_image.jpg"%>
+	    </td>
+        <td><%= @post.title %></td>
+        <td><%= @post.body %></td>
+
+                <% if @post.user.id == current_user.id %>
+          <td><%= link_to "Edit", edit_booker_path(@post.id), class:"btn-sm btn-success" %></td>
+          <td><%= link_to "Destroy", booker_path(@post.id), method: :delete, "data-confirm" => "本当に消しますか？",class:"btn-sm btn-danger" %>
+          </td>
+          		<% end %>
+      	</tr>
+
+    </tbody></table>
+
+  </div>
+
+</div>
