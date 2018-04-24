@@ -15,12 +15,12 @@ class UsersController < ApplicationController
 	end
 
 	def index
-		@users = User.all
+		@users = User.page(params[:page]).reverse_order
 		@booker = Booker.new
 	end
 
 	private 
    def user_params
-    params.require(:user).permit(:name, :introduction, :profile_image )
+    params.require(:user).permit(:name, :introduction, :profile_image, :user_id )
   end
 end
