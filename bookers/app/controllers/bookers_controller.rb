@@ -28,6 +28,7 @@ class BookersController < ApplicationController
    def booker_params
     params.require(:booker).permit(:title, :body)
   end
+  
 
 
 end

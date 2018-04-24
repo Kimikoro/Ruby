@@ -7,5 +7,6 @@ class User < ApplicationRecord
   validates :name, length: { in: 2..20 }
 
   has_many :bookers
+  attachment :profile_image
 
 end
