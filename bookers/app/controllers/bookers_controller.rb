@@ -32,8 +32,7 @@ class BookersController < ApplicationController
 
   def update
     booker = Booker.find(params[:id])
-    booker.user_id = current_user.id
-    booker.save
+    booker.update(booker_params)
     redirect_to bookers_path
   end
 
