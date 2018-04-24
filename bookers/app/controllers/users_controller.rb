@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		@booker = Booker.new
-		@bookers = Booker.all
+		@bookers = current_user.bookers.all
 	end
 
 	def create
