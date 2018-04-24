@@ -9,6 +9,8 @@ class BookersController < ApplicationController
 
   def create
     booker = Booker.new(booker_params)
+    booker.user_id = current_user.id
+    
     booker.save
     redirect_to bookers_path
   end
@@ -16,6 +18,8 @@ class BookersController < ApplicationController
   
 
   def index
+    @booker = Booker.new
+    @bookers = Booker.all
   end
 
   def show
@@ -28,7 +32,7 @@ class BookersController < ApplicationController
    def booker_params
     params.require(:booker).permit(:title, :body)
   end
-  
+
 
 
 end

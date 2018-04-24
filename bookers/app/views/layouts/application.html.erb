@@ -21,7 +21,7 @@
   			<ul class="nav navbar-nav navbar-right">
   				<% if user_signed_in? %>
       		<li class="nav-icon">
-        		<%= link_to " Home", bookers_path, class:"glyphicon glyphicon-home", 'aria-label':"Home" %>
+        		<%= link_to " Home", user_path(current_user.id), class:"glyphicon glyphicon-home", 'aria-label':"Home" %>
      		</li>
       		<li class="nav-icon">
         		<%= link_to " User", users_path, class:"glyphicon glyphicon-user", 'aria-label':"User" %>
