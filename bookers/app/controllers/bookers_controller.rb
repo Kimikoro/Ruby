@@ -22,7 +22,6 @@ before_action :correct_user, only: [:edit, :update]
     redirect_to bookers_path
   end
 
-  
 
   def index
     @booker = Booker.new
