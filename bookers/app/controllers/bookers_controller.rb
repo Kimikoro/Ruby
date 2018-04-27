@@ -5,11 +5,9 @@ before_action :correct_user, only: [:edit, :update]
 
   def top
   end
-  
+
   def about
   end
-
-
 
   def new
     @booker = Booker.new

@@ -2,6 +2,12 @@ class UsersController < ApplicationController
 	before_action :authenticate_user!
 	before_action :correct_user, only: [:edit, :update]
 
+
+
+	def home
+	    redirect_to user_path(current_user.id)
+	end
+
 	def edit
 		@user = User.find(params[:id])
 	end
@@ -15,7 +21,7 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		@booker = Booker.new
-		@bookers = current_user.bookers.all
+		@bookers = @user.bookers.all
 	end
 
 	def create
@@ -43,5 +49,5 @@ class UsersController < ApplicationController
       redirect_to booker_path
     end
     end
-	
+
 end

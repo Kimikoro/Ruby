@@ -4,43 +4,36 @@
   <div class="row">
 
   <div class="col-xs-3">
-        
-        
         <p id="notice"></p>
-      
-  
       	<%= render 'users/user', user: current_user %>
-
         <%= render 'bookers/booker', booker: @booker %>
-
-
   </div>
 
 
 <div class="col-xs-9">
     <h2>Books</h2>
+	<table class="table table-hover table-inverse">
+	  	<thead>
+	    <tr> 
+	      <th></th>
+	      <th>Title</th>
+	      <th>Opinion</th>
+	      <th colspan="3"></th>
+	    </tr>
+	  	</thead>
 
-    <table class="table table-hover table-inverse">
-  <thead>
-    <tr> 
-      <th></th>
-      <th>Title</th>
-      <th>Opinion</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-  	<% @bookers.each do |book| %>
-      <tr>
-        <td><%= attachment_image_tag book.user, :profile_image, format: 'jpeg', class: "img-circle pull-left profile-img profile-image", fallback: "no_image.jpg"%>
-      	</td>
-        <td><%=link_to book.title, booker_path(book.id) %></td>
-        <td><%= book.body %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  		<tbody>
+	  	<% @bookers.each do |book| %>
+	      <tr>
+	        <td>
+	        	<%= attachment_image_tag book.user, :profile_image, format: 'jpeg', class: "img-circle pull-left profile-img profile-image", fallback: "no_image.jpg"%>
+	      	</td>
+	        <td><%=link_to book.title, booker_path(book.id) %></td>
+	        <td><%= book.body %></td>
+	      </tr>
+	    <% end %>
+	  	</tbody>
+	</table>
 
 
   </div>
