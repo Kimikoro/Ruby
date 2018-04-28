@@ -16,8 +16,8 @@ before_action :correct_user, only: [:edit, :update]
   def create
     booker = Booker.new(booker_params)
     booker.user_id = current_user.id
-    last = Booker.last
     if booker.save
+      last = Booker.last
       redirect_to booker_path(last.id), success: "Successfully created your Book."
     else
       redirect_to bookers_path, danger: "Unfortunately failed to create."
