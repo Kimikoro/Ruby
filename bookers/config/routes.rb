@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :bookers
   resources :users
 
-  root 'bookers#index'
+  root 'users#home'
 
   get '/top' => 'bookers#top', as: 'top'
   get '/about' => 'bookers#about', as: 'about'

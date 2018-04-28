@@ -5,18 +5,12 @@
 <div class="container">
   <div class="row">
 
-  <div class="col-xs-3">
-        
-        
-        <p id="notice"></p>
-      
-  
-      	<%= render 'users/user', user: current_user %>
+    <div class="col-xs-3">
 
-        <%= render 'bookers/booker', booker: @booker %>
-
-
-  </div>
+          <p id="notice"></p>
+        	<%= render 'users/user', user: current_user %>
+          <%= render 'bookers/booker', booker: @booker %>
+    </div>
   <div class="col-xs-9">
     <h2>Users</h2>
 

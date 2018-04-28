@@ -2,27 +2,34 @@ class UsersController < ApplicationController
 	before_action :authenticate_user!
 	before_action :correct_user, only: [:edit, :update]
 
+
+
+	def home
+	    redirect_to user_path(current_user.id)
+	end
+
 	def edit
 		@user = User.find(params[:id])
 	end
 
 	def update
 		@user = User.find(params[:id])
-	    @user.update(user_params)
-	    redirect_to user_path(@user.id)
+	    if @user.update(user_params)
+      	 redirect_to user_path(@user.id), success: "Successfully updated your Profile."
+    	else
+      	 redirect_to user_path(@user.id), danger: "Unfortunately failed to update."
+   		end
 	end
 
 	def show
+		# UserモデルからURLのIDに対応したレコードを取り出す？
 		@user = User.find(params[:id])
 		@booker = Booker.new
-		@bookers = current_user.bookers.all
+		# 取り出したレコードに対応したBookerモデルのすべてを取り出す？
+		@bookers = @user.bookers.all
 	end
 
 	def create
-    booker = Booker.new(booker_params)
-    booker.user_id = current_user.id
-    booker.save
-    redirect_to bookers_path
   	end
 
 	def index
@@ -43,5 +50,5 @@ class UsersController < ApplicationController
       redirect_to booker_path
     end
     end
-	
+
 end
